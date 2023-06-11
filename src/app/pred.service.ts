@@ -7,12 +7,16 @@ import { Observable } from 'rxjs';
 })
 
 export class PredService {
-    SERVER_URL = "http://127.0.0.1:5000/pred"
+    SERVER_URL = "http://127.0.0.1:5000/"
     constructor(private prd: HttpClient) { }
 
     getPredict(age: number, gender: number): Observable<any> {
         console.log({ age, gender });
-        
-        return this.prd.post<any>(this.SERVER_URL, { age, gender });
+        return this.prd.post<any>(this.SERVER_URL+"pred", { age, gender });
+    }
+
+    learn(age: number, gender: number,genre:string): Observable<any> {
+        console.log({ age, gender });
+        return this.prd.post<any>(this.SERVER_URL+"learn", { age, gender,genre });
     }
 }

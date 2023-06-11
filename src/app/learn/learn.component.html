@@ -1,1 +1,11 @@
 <p>learn works!</p>
+Hello, type your age + gender to get genere prediction
+<hr>
+Age<input #age>
+genre<input #genre>
+Gender<select #Gender>
+    <option value="0">male</option>
+    <option value="1">female</option>
+</select>
+
+<button (click)="learn(+age.value,+Gender.value,genre.value)">Learn</button>
