@@ -1,0 +1,11 @@
+<p>predict works!</p>
+Hello, type your age + gender to get genere prediction
+<hr>
+Age<input #age>
+Gender<select #Gender>
+    <option value="0">male</option>
+    <option value="1">female</option>
+</select>
+
+<button (click)="predict(+age.value,+Gender.value)">Prdeict</button>
+<div *ngIf="myPred">Your predict{{myPred|json}}</div>
